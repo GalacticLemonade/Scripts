@@ -1,0 +1,1 @@
+-- Main hub for roblox. Simply gets the gameid and loads a script(s) for it.
