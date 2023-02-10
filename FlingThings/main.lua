@@ -37,7 +37,7 @@ local StrengthSlider = Tab:CreateSlider({
 
 coroutine.wrap(function()
     -- Strength
-    while task.wait() do
+    while task.wait(2) do
       local bodyvel_Name = "FlingVelocity"
 local userinputs = game:GetService("UserInputService")
 local w = game:GetService("Workspace")
