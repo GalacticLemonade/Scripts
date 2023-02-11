@@ -4,7 +4,7 @@ _G.CurrentStrength = 10
 
 function BootExternalScript(name)
   if name == "AntiGrab" then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/GalacticLemonade/Scripts/main/FlingThings/AntiGrab.lua'))()
+    local afling = loadstring(game:HttpGet('https://raw.githubusercontent.com/GalacticLemonade/Scripts/main/FlingThings/AntiGrab.lua'))()
   end
 end
 
@@ -40,6 +40,7 @@ local Destroy = Tab:CreateButton({
    Name = "Destroy UI",
    Callback = function()
       Rayfield:Destroy()
+      afling:Destroy()
       script:Destroy()
    end,
 })
