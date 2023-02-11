@@ -30,6 +30,19 @@ local Window = Rayfield:CreateWindow({
 
 local Tab = Window:CreateTab("Main", 4483362458) -- Title, Image
 
+Rayfield:Notify({
+   Title = "Error",
+   Content = "Sorry, but this script is current not functional. Please wait while it's fixed!",
+   Duration = 6.5,
+   Image = 4483362458,
+   Actions = { -- Notification Buttons
+   },
+},
+})
+
+BootExternalScript(AntiGrab)
+BootExternalScript(ThrowStrength)
+
 local SuperStrength = Tab:CreateToggle({
    Name = "Super Strength Toggle",
    CurrentValue = false,
@@ -66,16 +79,3 @@ local DeleteUI = Tab:CreateButton({
       DestroyUI()
    end,
 })
-
-Rayfield:Notify({
-   Title = "Error",
-   Content = "Sorry, but this script is current not functional. Please wait while it's fixed!",
-   Duration = 6.5,
-   Image = 4483362458,
-   Actions = { -- Notification Buttons
-   },
-},
-})
-
-BootExternalScript(AntiGrab)
-BootExternalScript(ThrowStrength)
