@@ -25,7 +25,7 @@ local AntiGrabButton  = Tab:CreateButton({
 
 local StrengthSlider = Tab:CreateSlider({
    Name = "Throw strength",
-   Range = {0, 400},
+   Range = {0, 20000},
    Increment = 10,
    Suffix = "Strength",
    CurrentValue = 1,
