@@ -67,5 +67,15 @@ local DeleteUI = Tab:CreateButton({
    end,
 })
 
+Rayfield:Notify({
+   Title = "Error",
+   Content = "Sorry, but this script is current not functional. Please wait while it's fixed!",
+   Duration = 6.5,
+   Image = 4483362458,
+   Actions = { -- Notification Buttons
+   },
+},
+})
+
 BootExternalScript(AntiGrab)
 BootExternalScript(ThrowStrength)
