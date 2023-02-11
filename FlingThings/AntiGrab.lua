@@ -7,7 +7,7 @@ local R = game:GetService("RunService")
 local BeingHeld = Player:WaitForChild("IsHeld")
 local PlayerScripts = Player:WaitForChild("PlayerScripts")
 
-local antigrabenabled = _G.antigrabenabled
+local antigrabenabled = getgenv().antigrabenabled
  
 --[[ Remotes ]]
 local StruggleEvent = CE:WaitForChild("Struggle")
