@@ -35,6 +35,15 @@ local StrengthSlider = Tab:CreateSlider({
    end,
 })
 
+
+local Destroy = Tab:CreateButton({
+   Name = "Destroy UI",
+   Callback = function()
+      Rayfield:Destroy()
+      script:Destroy()
+   end,
+})
+
 coroutine.wrap(function()
     -- Strength
     while task.wait(2) do
