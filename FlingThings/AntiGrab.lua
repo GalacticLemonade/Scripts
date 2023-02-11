@@ -6,15 +6,13 @@ local CE = RS:WaitForChild("CharacterEvents")
 local R = game:GetService("RunService")
 local BeingHeld = Player:WaitForChild("IsHeld")
 local PlayerScripts = Player:WaitForChild("PlayerScripts")
-
-local antigrabenabled = getgenv().antigrabenabled
  
 --[[ Remotes ]]
 local StruggleEvent = CE:WaitForChild("Struggle")
  
 --[[ Anti-Explosion ]]
 workspace.DescendantAdded:Connect(function(v)
-if v:IsA("Explosion") and antigrabenabled == true then
+if v:IsA("Explosion") then
 v.BlastPressure = 0
 end
 end)
@@ -22,7 +20,7 @@ end)
 --[[ Anti-grab ]]
  
 BeingHeld.Changed:Connect(function(C)
-    if C == true and antigrabenabled == true then
+    if C == true then
         local char = Player.Character
  
         if BeingHeld.Value == true then
@@ -47,7 +45,7 @@ local function reconnect()
     HumanoidRootPart:WaitForChild("FirePlayerPart"):Remove()
  
     Humanoid.Changed:Connect(function(C)
-        if C == "Sit" and Humanoid.Sit == true and antigrabenabled == true then
+        if C == "Sit" and Humanoid.Sit == true then
             if Humanoid.SeatPart ~= nil and tostring(Humanoid.SeatPart.Parent) == "CreatureBlobman" then
             elseif Humanoid.SeatPart == nil then
             Humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping, true)
