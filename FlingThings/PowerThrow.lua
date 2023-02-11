@@ -3,8 +3,9 @@ local userinputs = game:GetService("UserInputService")
 local w = game:GetService("Workspace")
 local r = game:GetService("RunService")
 local d = game:GetService("Debris")
-local strength = _G.CurrentStrength
-local enabled = _G.strengthenabled
+
+local strength = getgenv().CurrentStrength
+local enabled = getgenv().strengthenabled
  
 w.ChildAdded:Connect(function(model)
     if model.Name == "GrabParts" then
