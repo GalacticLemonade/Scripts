@@ -1,10 +1,6 @@
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
 coroutine.wrap(function()
-   loadstring(game:HttpGet('https://raw.githubusercontent.com/GalacticLemonade/Scripts/main/FlingThings/AntiGrab.lua'))()
-end)()
-
-coroutine.wrap(function()
    loadstring(game:HttpGet('https://raw.githubusercontent.com/GalacticLemonade/Scripts/main/FlingThings/PowerThrow.lua'))()
 end)()
 
@@ -20,6 +16,15 @@ local Window = Rayfield:CreateWindow({
 })
 
 local Tab = Window:CreateTab("Main", 4483362458) -- Title, Image
+
+local Antigrab = Tab:CreateButton({
+   Name = "Activate Antigrab",
+   Callback = function()
+      coroutine.wrap(function()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/GalacticLemonade/Scripts/main/FlingThings/AntiGrab.lua'))()
+      end)()
+   end,
+})
 
 local SuperStrengthSlider = Tab:CreateSlider({
    Name = "Strength Power",
