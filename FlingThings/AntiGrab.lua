@@ -20,10 +20,10 @@ end)
 --[[ Anti-grab ]]
  
 BeingHeld.Changed:Connect(function(C)
-    if C == true then
+    if C == true and getgenv().Antigrab == true then
         local char = Player.Character
  
-        if BeingHeld.Value == true then
+        if BeingHeld.Value == true and getgenv().Antigrab == true then
             local Event;
             Event = R.RenderStepped:Connect(function()
                 if BeingHeld.Value == true then
@@ -45,7 +45,7 @@ local function reconnect()
     HumanoidRootPart:WaitForChild("FirePlayerPart"):Remove()
  
     Humanoid.Changed:Connect(function(C)
-        if C == "Sit" and Humanoid.Sit == true then
+        if C == "Sit" and Humanoid.Sit == true and getgenv().Antigrab == true then
             if Humanoid.SeatPart ~= nil and tostring(Humanoid.SeatPart.Parent) == "CreatureBlobman" then
             elseif Humanoid.SeatPart == nil then
             Humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping, true)
