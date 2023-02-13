@@ -41,5 +41,4 @@ w.ChildAdded:Connect(function(model)
      end)
    end
   end
- end
-end
+  end)
