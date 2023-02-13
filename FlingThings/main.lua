@@ -1,5 +1,13 @@
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
+coroutine.wrap(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GalacticLemonade/Scripts/main/FlingThings/PowerThrow.lua"))
+end)()
+
+coroutine.wrap(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GalacticLemonade/Scripts/main/FlingThings/AntiGrab.lua"))
+end)()
+
 function DestroyUI()
   Rayfield:Destroy()
   script:Destroy()
