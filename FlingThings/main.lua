@@ -1,17 +1,15 @@
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
-local AntigrabCoro = coroutine.wrap(function()
+coroutine.wrap(function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/GalacticLemonade/Scripts/main/FlingThings/AntiGrab.lua'))()
 end)()
 
-local PowerThrowCoro = coroutine.wrap(function()
+coroutine.wrap(function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/GalacticLemonade/Scripts/main/FlingThings/PowerThrow.lua'))()
 end)()
 
 function DestroyUI()
   Rayfield:Destroy()
-  AntigrabCoro:Destroy()
-  PowerThrowCoro:Destroy()
   script:Destroy()
 end
 
