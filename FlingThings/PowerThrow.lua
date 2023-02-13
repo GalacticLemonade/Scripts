@@ -9,11 +9,7 @@ local strength
 coroutine.wrap(function()
   while task.wait(1) do
    local BasicStrength = getgenv().ThrowStrength
-   if getgenv().AdvancedStrength ~= true and getgenv().SuperStrength == true then
-    strength = BasicStrength
-   elseif getgenv().SuperStrength == true then
-    strength = Vector3.new(getgenv().AdvancedStrengthX, getgenv().AdvancedStrengthY, getgenv().AdvancedStrengthZ)
-   end
+   strength = BasicStrength
   end
 end)()
 
