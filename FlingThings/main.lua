@@ -5,12 +5,6 @@ function DestroyUI()
   script:Destroy()
 end
 
-function BasicStrengthChanged(basic)
-  if getgenv().AdvancedStrength == false then
-    getgenv().ThrowStrength = tonumber(basic)
-  end
-end
-
 local Window = Rayfield:CreateWindow({
    Name = "Fling Things and People",
    LoadingTitle = "Fling Things and People Hub",
@@ -33,15 +27,6 @@ local AntigrabToggle = Tab:CreateToggle({
    end,
 })
 
-local ExtendedStrength = Tab:CreateToggle({
-   Name = "Extended Strength",
-   CurrentValue = false,
-   Flag = "ExtendedStrengthToggle",
-   Callback = function(Value)
-      getgenv().SuperStrength = Value
-   end,
-})
-
 local BasicStrengthSlider = Tab:CreateSlider({
    Name = "Basic Strength",
    Range = {0, 500},
@@ -50,52 +35,7 @@ local BasicStrengthSlider = Tab:CreateSlider({
    CurrentValue = 10,
    Flag = "BasicStrengthSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-      BasicStrengthChanged(Value)
-   end,
-})
-
-local AdvancedStrengthEnabled = Tab:CreateToggle({
-   Name = "Advanced Strength",
-   CurrentValue = false,
-   Flag = "AdvancedStrengthTogle",
-   Callback = function(Value)
-      getgenv().AdvancedStrength = Value
-   end,
-})
-
-local AdvancedStrengthX = Tab:CreateSlider({
-   Name = "Advanced Strength X",
-   Range = {0, 500},
-   Increment = 1,
-   Suffix = "Strength",
-   CurrentValue = 10,
-   Flag = "AdvancedStrengthX", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-      getgenv().AdvancedStrengthX = Value
-   end,
-})
-
-local AdvancedStrengthY = Tab:CreateSlider({
-   Name = "Advanced Strength Y",
-   Range = {0, 500},
-   Increment = 1,
-   Suffix = "Strength",
-   CurrentValue = 10,
-   Flag = "AdvancedStrengthY", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-      getgenv().AdvancedStrengthY = Value
-   end,
-})
-
-local AdvancedStrengthZ = Tab:CreateSlider({
-   Name = "Advanced Strength Z",
-   Range = {0, 500},
-   Increment = 1,
-   Suffix = "Strength",
-   CurrentValue = 10,
-   Flag = "AdvancedStrengthZ", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-      getgenv().AdvancedStrengthZ = Value
+      getgenv().ThrowStrength = tonumber(Value)
    end,
 })
 
