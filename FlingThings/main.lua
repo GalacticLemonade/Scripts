@@ -33,6 +33,15 @@ local AntigrabToggle = Tab:CreateToggle({
    end,
 })
 
+local ExtendedStrength = Tab:CreateToggle({
+   Name = "Extended Strength",
+   CurrentValue = false,
+   Flag = "ExtendedStrengthToggle",
+   Callback = function(Value)
+      getgenv().SuperStrength = Value
+   end,
+})
+
 local BasicStrengthSlider = Tab:CreateSlider({
    Name = "Basic Strength",
    Range = {0, 500},
