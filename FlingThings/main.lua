@@ -27,6 +27,23 @@ local AntigrabToggle = Tab:CreateToggle({
    end,
 })
 
+local AntigrabKeybind = Tab:CreateKeybind({
+   Name = "Antigrab Keybind",
+   CurrentKeybind = "F7",
+   HoldToInteract = false,
+   Flag = "Keybind1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Keybind)
+      local pressed = true
+      pressed = !pressed
+      print(pressed)
+      if pressed == true then
+        AntigrabToggle:Set(true)
+        else
+        AntigrabToggle:Set(false)
+      end
+   end,
+})
+
 local BasicStrengthSlider = Tab:CreateSlider({
    Name = "Basic Strength",
    Range = {0, 500},
@@ -36,7 +53,6 @@ local BasicStrengthSlider = Tab:CreateSlider({
    Flag = "BasicStrengthSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
       getgenv().ThrowStrength = tonumber(Value)
-      print(tonumber(Value))
    end,
 })
 
