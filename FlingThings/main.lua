@@ -36,6 +36,7 @@ local BasicStrengthSlider = Tab:CreateSlider({
    Flag = "BasicStrengthSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
       getgenv().ThrowStrength = tonumber(Value)
+      print(tonumber(Value))
    end,
 })
 
@@ -45,6 +46,8 @@ local DeleteUI = Tab:CreateButton({
       DestroyUI()
    end,
 })
+
+getgenv().ThrowStrength = 10
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/GalacticLemonade/Scripts/main/FlingThings/AntiGrab.lua'))()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/GalacticLemonade/Scripts/main/FlingThings/PowerThrow.lua'))()
