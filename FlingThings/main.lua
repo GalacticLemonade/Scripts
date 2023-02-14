@@ -29,12 +29,16 @@ local AntigrabToggle = Tab:CreateToggle({
 
 local AntigrabKeybind = Tab:CreateKeybind({
    Name = "Antigrab Keybind",
-   CurrentKeybind = "F7",
+   CurrentKeybind = "Q",
    HoldToInteract = false,
    Flag = "Keybind1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Keybind)
       local pressed = true
-      pressed = !pressed
+      if pressed == true then
+      pressed = false
+      else
+      pressed = true
+      end
       print(pressed)
       if pressed == true then
         AntigrabToggle:Set(true)
